@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You</title>
+
+  <!-- =====================================================================
+       ✏️  PERSONALIZE HERE
+       Change these values and everything on the page updates automatically.
+       ===================================================================== -->
+  <script>
+    const girlfriendName  = "Kajal";          // her name (used in the letter, footer and tab title)
+    const myName          = "Sahil";         // your name (used to sign the letter and footer)
+    const togetherSince   = "4 May 2026";         // shown quietly in the hero & footer — set to "" to hide
+    const letterDate      = "";                  // e.g. "30 September 2026" — leave "" to use today's date
+    const backgroundMusic = "music/our-song.mp3";// path to your song — set to "" to hide the music button
+    const musicLabel      = "Our song";          // label shown next to the music button
+
+    document.documentElement.classList.add("js");
+  </script>
+  <!-- ===================================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Soft floating hearts live in here (created by script.js) -->
+  <div class="hearts" aria-hidden="true"></div>
+
+
+  <!-- =========================================================
+       1. HERO
+       ✏️ Background photo: change the url(...) below.
+          (Spaces in file names are written as %20.)
+       ========================================================= -->
+  <header class="hero" id="top"
+          style="--hero-img: url('images/A%20realistic%20very%20dark%20photo%20from%20the%20back%20of%20the%20s.webp')">
+    <div class="hero__inner">
+      <!-- ✏️ Greeting — change "Love" to whatever you call her -->
+      <p class="hero__greeting reveal">Hey Love <span class="heart-inline">&#9829;&#xFE0E;</span></p>
+
+      <p class="hero__lead reveal" style="--d:.25s">
+        Some things are easier to say this way.
+      </p>
+
+      <h1 class="hero__title reveal" style="--d:.6s">I'm Sorry.</h1>
+
+      <button class="btn btn--primary js-burst reveal" style="--d:.9s" data-scroll-to="apology">
+        Read My Heart <span class="heart-inline">&#9829;&#xFE0E;</span>
+      </button>
+
+      <p class="hero__since reveal" style="--d:1.2s" data-since-wrap>
+        <span data-name="me"></span> &amp; <span data-name="her"></span> · since <span data-since></span>
+      </p>
+    </div>
+
+    <span class="hero__scroll" aria-hidden="true"></span>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         2. APOLOGY
+         ========================================================= -->
+    <section class="section apology" id="apology">
+      <div class="container split">
+        <!-- ✏️ Photo for this section -->
+        <figure class="split__media reveal">
+          <img src="images/a%20man%20and%20a%20woman%20are%20sitting%20at%20a%20distance%20with%20t.webp"
+               alt="A couple sitting apart on a beach" loading="lazy">
+        </figure>
+
+        <div class="split__text">
+          <p class="eyebrow eyebrow--left reveal">First, and most importantly</p>
+          <h2 class="section-title section-title--left reveal">I'm sorry.</h2>
+
+          <div class="prose">
+            <p class="reveal">
+              For the misunderstanding, and for anything I said or did that hurt you.
+            </p>
+            <!-- ✏️ OPTIONAL: one line about the specific thing you're sorry for.
+            <p class="reveal">I'm sorry for not listening when you needed me to.</p>
+            -->
+          </div>
+
+          <p class="pull reveal">
+            I never want to be right at the cost of hurting you.
+            <span>You matter so much more.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         3. IT'S NOT YOU VS ME  (the emotional centrepiece)
+         ========================================================= -->
+    <section class="section team" id="us">
+      <div class="container narrow">
+        <p class="team__old reveal"><span class="strike">It's not you vs. me.</span></p>
+        <h2 class="team__quote reveal" style="--d:.5s">It's us vs. the problem.</h2>
+
+        <!-- ✏️ Photo for this section -->
+        <figure class="team__media reveal">
+          <img src="images/close%20up%20a%20man%20and%20woman%20walking%20down%20a%20street%20hol.webp"
+               alt="Two people holding hands" loading="lazy">
+        </figure>
+
+        <div class="team__lines team__lines--soft">
+          <p class="reveal">Bad moments will come.</p>
+          <p class="reveal" style="--d:.15s">I don't want them to turn us against each other.</p>
+        </div>
+
+        <div class="team__final">
+          <p class="reveal">Not you.</p>
+          <p class="reveal" style="--d:.15s">Not me.</p>
+          <p class="team__together reveal" style="--d:.35s">Us — together.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         4. OUR FUTURE
+         ========================================================= -->
+    <section class="section future" id="future">
+      <div class="container split split--reverse">
+        <!-- ✏️ Photo for this section -->
+        <figure class="split__media reveal">
+          <img src="images/Elderly%20couple.webp" alt="An elderly couple smiling together" loading="lazy">
+        </figure>
+
+        <div class="split__text">
+          <p class="eyebrow eyebrow--left reveal">Looking ahead</p>
+          <h2 class="section-title section-title--left reveal">Our Future</h2>
+
+          <div class="prose">
+            <p class="reveal">I know we won't have a perfect relationship.</p>
+          </div>
+
+          <ul class="future__hard">
+            <li class="reveal">We may have more bad moments.</li>
+            <li class="reveal" style="--d:.1s">We may misunderstand each other again.</li>
+            <li class="reveal" style="--d:.2s">There may be difficult days.</li>
+          </ul>
+
+          <div class="prose">
+            <p class="reveal">But there will also be so many beautiful days ahead.</p>
+          </div>
+
+          <!-- ✏️ Add your own future plans to this list -->
+          <ul class="future__good">
+            <li class="reveal">Laughing until our stomachs hurt.</li>
+            <li class="reveal" style="--d:.08s">Random late-night conversations.</li>
+            <li class="reveal" style="--d:.16s">Adventures we haven't planned yet.</li>
+            <li class="reveal" style="--d:.24s">Photos we haven't taken.</li>
+            <li class="reveal" style="--d:.32s">Places we haven't visited.</li>
+            <li class="reveal" style="--d:.4s">Memories we haven't created.</li>
+          </ul>
+
+          <div class="prose">
+            <p class="reveal">And hopefully, the best moments of our lives are still waiting for us.</p>
+          </div>
+
+          <p class="pull reveal">
+            I don't want to give up on all of that because of one bad moment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         4b. EVEN THE GODS HAD THEIR MOMENTS
+         ✏️ Each story is one <article class="myth-card"> block.
+            .myth-card__origin = small line above the title
+            .myth-card__lesson = the closing line in italics
+         ========================================================= -->
+    <section class="section myths" id="gods">
+      <div class="container">
+        <p class="eyebrow reveal">From the stories we grew up with</p>
+        <h2 class="section-title myths__title reveal">Even the Gods Had Their Moments</h2>
+        <p class="myths__intro reveal">
+          Even they misread each other, said things in a moment of hurt,
+          and still found their way back.
+        </p>
+
+        <div class="myths__grid">
+          <article class="myth-card reveal">
+            <p class="myth-card__origin">Vishnu &amp; Lakshmi · The origin of Dhanteras</p>
+            <h3>The Sugarcane Field</h3>
+            <p>
+              During a visit to Earth, Lord Vishnu asked Mata Lakshmi to stay behind while he
+              travelled South, but she followed him anyway. Along the way, she picked a stalk of
+              sugarcane from a field without the farmer's permission. Annoyed, Vishnu cursed her to
+              serve as a humble maid in the farmer's household for 12 years. Her presence blessed
+              the farmer with immense wealth, and when Vishnu returned for her, he humbly
+              compensated the farmer before bringing Lakshmi back home.
+            </p>
+            <p class="myth-card__lesson">However long it took, he came back for her.</p>
+          </article>
+
+          <article class="myth-card reveal" style="--d:.12s">
+            <p class="myth-card__origin">Vishnu &amp; Lakshmi · The tale of Hayagriva</p>
+            <h3>The Misunderstood Smile</h3>
+            <p>
+              In a light moment, Lord Vishnu smiled, but Mata Lakshmi read it as mockery directed
+              at her. Hurt, she cursed him that his head would fall off — and during a battle, his
+              bowstring snapped and severed it. Yet this "mistake" served a hidden purpose:
+              Vishnu's head was replaced with that of a horse, making him Lord Hayagriva, the only
+              form that could defeat the demon Hayagreekasura.
+            </p>
+            <p class="myth-card__lesson">One misread moment — and still, it led somewhere good.</p>
+          </article>
+
+          <article class="myth-card reveal">
+            <p class="myth-card__origin">Vishnu &amp; Lakshmi · Ucchaihshravas</p>
+            <h3>The Divine Horse</h3>
+            <p>
+              Watching the celestial horse Ucchaihshravas approach Vaikuntha, Lakshmi became so
+              absorbed in its beauty that she didn't hear Lord Vishnu calling her. Annoyed, he cursed
+              her to be born on Earth as a horse. Realising he had been too harsh, Vishnu took the
+              form of a horse himself to join her, doing penance beside her so they could break the
+              curse together.
+            </p>
+            <p class="myth-card__lesson">He admitted he was too harsh — and came to stand beside her.</p>
+          </article>
+
+          <article class="myth-card reveal" style="--d:.12s">
+            <p class="myth-card__origin">Shiva &amp; Parvati · Lake Mansarovar</p>
+            <h3>The Cosmic Lesson</h3>
+            <p>
+              Lord Shiva was explaining the secrets of the universe to Parvati, but she was
+              distracted by the beauty of Lake Mansarovar. Annoyed, Shiva said that if she loved
+              fish and water so much, she should live among fisherfolk — and she was born on Earth as
+              a fisherman's daughter. Missing her deeply, Shiva disguised himself as a fisherman,
+              cast a giant net to solve her village's trouble, won her hand again, and brought her
+              home.
+            </p>
+            <p class="myth-card__lesson">He missed her too much to stay apart.</p>
+          </article>
+        </div>
+
+        <p class="myths__close reveal">
+          If even they had their moments and always found their way back to each other,
+          <span>so can we.</span>
+        </p>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         5. RELATIONSHIP QUOTES (carousel)
+         ✏️ Add, remove or edit <figure class="quote-card"> blocks.
+            The dots and arrows update automatically.
+         ========================================================= -->
+    <section class="section quotes" id="quotes">
+      <div class="container">
+        <p class="eyebrow reveal">Things I keep reminding myself</p>
+
+        <div class="carousel reveal" data-carousel>
+          <div class="carousel__track" aria-live="polite">
+            <figure class="quote-card">
+              <blockquote>Love isn't about never having bad days. It's about choosing each other after them.</blockquote>
+            </figure>
+            <figure class="quote-card">
+              <blockquote>One bad moment doesn't erase all the beautiful ones.</blockquote>
+            </figure>
+            <figure class="quote-card">
+              <blockquote>What matters is how we find our way back to each other.</blockquote>
+            </figure>
+            <figure class="quote-card">
+              <blockquote>Real love is two imperfect people choosing to understand, forgive, and stay.</blockquote>
+            </figure>
+          </div>
+
+          <div class="carousel__controls">
+            <button class="carousel__arrow" data-prev aria-label="Previous quote">&#8592;</button>
+            <div class="carousel__dots" role="tablist" aria-label="Choose a quote"></div>
+            <button class="carousel__arrow" data-next aria-label="Next quote">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         6. PHOTO GALLERY
+         ✏️ PHOTOS: add pictures to the /images folder and point src="" at them.
+            (Spaces in file names are written as %20.)
+            Copy a whole <figure> … </figure> block to add a photo.
+            Delete a <figcaption> line to leave a photo without a caption.
+         ========================================================= -->
+    <section class="section gallery-section" id="memories">
+      <div class="container">
+        <h2 class="section-title reveal">Some of My Favorite Memories With You <span class="heart-inline">&#9829;&#xFE0E;</span></h2>
+
+        <div class="gallery">
+          <figure class="gallery__item reveal">
+            <img src="images/pose%20of%20man%20and%20woman%20from%20titanic.webp" alt="A couple embracing on the beach at sunset" loading="lazy">
+            <figcaption>Just us.</figcaption>
+          </figure>
+
+          <figure class="gallery__item reveal" style="--d:.1s">
+            <img src="images/When%20the%20rain%20is%20blowing%20in%20your%20face_And%20the%20whol.webp" alt="A couple holding each other in the rain" loading="lazy">
+            <figcaption>Even on the stormy days.</figcaption>
+          </figure>
+
+          <figure class="gallery__item reveal" style="--d:.2s">
+            <img src="images/Romantic%20vector%20illustration%20on%20love%20story%20theme.%20.webp" alt="An illustrated couple hugging" loading="lazy">
+          </figure>
+
+          <figure class="gallery__item reveal">
+            <img src="images/radha%20krishna.webp" alt="Radha and Krishna" loading="lazy">
+            <figcaption>A forever kind of love.</figcaption>
+          </figure>
+
+          <figure class="gallery__item reveal" style="--d:.1s">
+            <img src="images/Minimalist%20vector%20art%20of%20vegetarian%20couple.webp" alt="A watercolor couple sharing a kiss" loading="lazy">
+          </figure>
+
+          <figure class="gallery__item reveal" style="--d:.2s">
+            <img src="images/radha%20krishna-1.webp" alt="Radha and Krishna in a golden frame" loading="lazy">
+          </figure>
+
+          <figure class="gallery__item reveal">
+            <img src="images/vector%20icon%20white%20background%20outline%20only%20represen.webp" alt="A line drawing of a couple" loading="lazy">
+            <figcaption>More moments like this, please.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         7. VIDEO GALLERY
+         ✏️ LOCAL VIDEOS: put .mp4 files in /videos, then set data-video="" on a tile.
+            Portrait (phone) and landscape videos both work.
+         ✏️ YOUTUBE: use data-youtube="VIDEO_ID" instead of data-video
+            (the id is the part after youtube.com/watch?v=).
+         ✏️ data-caption = the little line under each tile.
+            Copy a whole <button class="vtile"> … </button> block to add a video,
+            or delete one to remove it. Tiles without a file show a soft placeholder.
+         ========================================================= -->
+    <section class="section videos-section" id="videos">
+      <div class="container">
+        <p class="eyebrow reveal">Press play</p>
+        <h2 class="section-title videos__title reveal">The Moments We've Lived</h2>
+        <p class="videos__sub reveal">…and the ones still waiting for us.</p>
+
+        <div class="vgallery">
+          <button class="vtile reveal" type="button" data-video="videos/memory1.mp4" data-caption="That day"></button>
+          <button class="vtile reveal" type="button" style="--d:.08s" data-video="videos/memory2.mp4" data-caption="Us, being us"></button>
+          <button class="vtile reveal" type="button" style="--d:.16s" data-video="videos/memory3.mp4" data-caption="Laughing again"></button>
+          <button class="vtile reveal" type="button" data-video="videos/memory4.mp4" data-caption="Somewhere beautiful"></button>
+          <button class="vtile reveal" type="button" style="--d:.08s" data-youtube="Cb6wuzOurPc" data-caption="Our song"></button>
+
+          <!-- The "moments still waiting for us" tile — keep it last -->
+          <div class="vtile vtile--waiting reveal" style="--d:.16s">
+            <span class="vtile__waiting-heart" aria-hidden="true">&#9829;&#xFE0E;</span>
+            <p>Our next memory</p>
+            <span>still waiting for us</span>
+          </div>
+        </div>
+
+        <p class="videos__note reveal">Just a few moments. I hope we make hundreds more.</p>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         8. THINGS I LOVE ABOUT YOU
+         ✏️ Edit, add or remove <li> cards — numbering is automatic.
+         ========================================================= -->
+    <section class="section love" id="love">
+      <div class="container">
+        <h2 class="section-title reveal">Things I Love About You</h2>
+
+        <ul class="love__grid">
+          <li class="love-card reveal"><h3>Your smile</h3></li>
+          <li class="love-card reveal" style="--d:.08s"><h3>Your laugh</h3></li>
+          <li class="love-card reveal" style="--d:.16s"><h3>The way you care</h3></li>
+          <li class="love-card reveal"><h3>Our random conversations</h3></li>
+          <li class="love-card reveal" style="--d:.08s"><h3>How comfortable I feel with you</h3></li>
+          <li class="love-card reveal" style="--d:.16s"><h3>Simply having you in my life</h3></li>
+        </ul>
+
+        <!-- Surprise button -->
+        <div class="surprise">
+          <button class="btn btn--ghost js-burst reveal" data-reveal-target="surprise-msg" aria-expanded="false">
+            Click for a surprise <span class="heart-inline">&#9829;&#xFE0E;</span>
+          </button>
+          <div class="hidden-msg" id="surprise-msg">
+            <div>
+              <!-- ✏️ SURPRISE: change this to whatever you'd like to offer her -->
+              <p>
+                A date, just us, wherever you'd like.
+                <span>Whenever you're ready.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         9. LETTER
+         ✏️ This is your letter — rewrite any line in your own words.
+         ========================================================= -->
+    <section class="section letter-section" id="letter">
+      <div class="container narrow">
+        <h2 class="section-title reveal">A Little Letter From Me To You</h2>
+
+        <article class="letter reveal">
+          <p class="letter__date" data-letter-date></p>
+          <p class="letter__greeting">My dear <span data-name="her"></span>,</p>
+
+          <p>I'm sorry for my part in what happened, and for what I could have handled better.</p>
+          <p>I'll try to understand you better, and be better for us.</p>
+          <p>I don't want to keep score. I want to stand beside you.</p>
+
+          <p class="letter__choose">I choose us.</p>
+
+          <p class="letter__sign">
+            Always yours,<br>
+            <span data-name="me"></span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         10. FINAL
+         ========================================================= -->
+    <section class="section final" id="final">
+      <div class="container narrow">
+        <h2 class="final__sorry reveal">I'm Sorry <span class="heart-inline">&#9829;&#xFE0E;</span></h2>
+
+        <p class="final__line reveal">Let's not let one bad chapter define our whole story.</p>
+
+        <ul class="final__more">
+          <li class="reveal">More laughs.</li>
+          <li class="reveal" style="--d:.1s">More adventures.</li>
+          <li class="reveal" style="--d:.2s">More hugs.</li>
+          <li class="final__more-us reveal" style="--d:.4s">More us.</li>
+        </ul>
+
+        <p class="final__always reveal">Us. Always. <span class="heart-inline">&#9829;&#xFE0E;</span></p>
+
+        <button class="btn btn--primary js-burst reveal" data-reveal-target="one-more" aria-expanded="false">
+          One More Thing...
+        </button>
+
+        <div class="hidden-msg hidden-msg--final" id="one-more">
+          <div>
+            <p>I don't need a perfect relationship.</p>
+            <p class="hidden-msg__last">Just a real one — with you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+    <p>Made by <span data-name="me"></span>, only for <span data-name="her"></span>.</p>
+    <p class="footer__since" data-since-wrap>Since <span data-since></span>.</p>
+  </footer>
+
+
+  <!-- Photo lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lightbox__btn lightbox__close" data-close aria-label="Close">&times;</button>
+    <button class="lightbox__btn lightbox__prev" data-prev aria-label="Previous photo">&#8592;</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" src="" alt="">
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__next" data-next aria-label="Next photo">&#8594;</button>
+  </div>
+
+
+  <!-- Video player (opens when a video tile is clicked) -->
+  <div class="lightbox video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+    <button class="lightbox__btn lightbox__close" data-close aria-label="Close">&times;</button>
+    <figure class="lightbox__figure">
+      <div class="video-modal__frame"></div>
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+  </div>
+
+
+  <!-- Background music toggle — never autoplays. Song path is set at the top of this file. -->
+  <button class="music" type="button" aria-pressed="false" hidden>
+    <span class="music__icon" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
+    <span class="music__label"></span>
+  </button>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
